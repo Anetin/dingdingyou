@@ -25,4 +25,20 @@ $(function () {
             }
         });
     }
+
+    var scroll_list=$("#scroll_list");
+    scroll_list.on("click", ".like-icon",function(e){
+        var likenum='';
+        if($(this).hasClass('glyphicon-heart')){
+            likenum=+$(this).prev().text();
+            $(this).removeClass('glyphicon-heart').addClass('glyphicon-heart-empty');
+            $(this).prev().html(likenum-1);
+        }else if($(this).hasClass('glyphicon-heart-empty')){
+            likenum=+$(this).prev().text();
+            $(this).prev().html(likenum+1);
+            $(this).removeClass('glyphicon-heart-empty').addClass('glyphicon-heart');
+        }
+        
+        
+    });
 });

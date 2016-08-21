@@ -22,10 +22,15 @@ nav.nav{
 }
 p.title{
 	font-size: .75rem;
-	color: red;
+	/*color: red;*/
 	margin-left: 1rem;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
+
+}
+p.title .time{
+	margin-left: 1rem;
+	font-size: .5rem;
 }
 .map-title{
 	display: flex;
@@ -66,7 +71,7 @@ p.title{
 }
 .map-title .landscape{
 	font-size: .6rem;
-	margin-top: -.25rem;
+	/*margin-top: -.2rem;*/
 	margin-bottom: .25rem;
 }
 
