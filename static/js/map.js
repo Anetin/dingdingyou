@@ -12,17 +12,21 @@ $(function () {
     var opts = {
                 width : 250,     // 信息窗口宽度
                 height: 80,     // 信息窗口高度
-                title : "信息窗口" , // 信息窗口标题
+                title : "我的足迹" , // 信息窗口标题
                 enableMessage:true//设置允许信息窗发送短息
                };
     for(var i=0;i<data_info.length;i++){
         var marker = new BMap.Marker(new BMap.Point(data_info[i][0],data_info[i][1]));  // 创建标注
         var content = data_info[i][2];
         map.addOverlay(marker);               // 将标注添加到地图中
-        addClickHandler(content,marker);
+        
+        addClickHandler(content,marker,i);
     }
-    function addClickHandler(content,marker){
+    function addClickHandler(content,marker,i){
         marker.addEventListener("click",function(e){
+            $("#list"+i).click();
+            // console.log(i);
+            // console.log($("#list"+i));
             openInfo(content,e)}
         );
     }
